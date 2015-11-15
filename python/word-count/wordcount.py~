@@ -1,0 +1,12 @@
+def word_count(sentence):
+	
+	output_dict = {}
+	
+	for word in sentence.split():
+		if word in output_dict:
+			output_dict[word] += 1
+		else:
+			output_dict[word] = 1
+	
+	return output_dict
+

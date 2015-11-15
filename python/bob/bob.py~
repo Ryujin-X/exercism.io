@@ -1,0 +1,15 @@
+def hey(what):
+	sentence = what.strip()
+	if sentence == '':
+		#nothing
+		reply = "Fine. Be that way!"
+	elif sentence.isupper():
+		#shout
+		reply = "Whoa, chill out!"
+	elif sentence[-1] == '?':
+		#question
+		reply = "Sure."
+	else:
+		#normal
+		reply = "Whatever."
+	return reply

@@ -1,0 +1,22 @@
+from collections import Counter
+
+
+def detect_anagrams(string, words_list):
+	letter_count = Counter(string.lower())
+	anagrams = []
+	
+	for word in words_list:
+		if word.lower() != string.lower() and Counter(word.lower()) == letter_count:
+			anagrams.append(word)
+	
+	return anagrams
+
+
+		
+		
+			
+		
+		
+				
+				
+	

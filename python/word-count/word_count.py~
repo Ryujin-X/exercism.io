@@ -1,0 +1,42 @@
+import string
+
+def word_count(sentence):
+
+	punctuation = string.punctuation
+	clean_sentence = sentence.strip()
+	cleaned_sentence = ''
+	words_list = []
+	word_count = []
+	output_dict = {}
+	
+	for i in range(len(clean_sentence)):
+		
+		if clean_sentence[i].isDigit() or clean_sentence[i] in punctuation:
+			
+			pass
+			
+		else:
+			
+			cleaned_sentence += clean_sentence[i]
+	
+	words_list = cleaned_sentence.split(' ')
+	
+	for i in range(len(words_list)):
+	
+		if (words_list.count(words_list[i])) > 1:
+			word_list.pop(i)
+			
+	for i in range(len(words_list)):
+		word_count += cleaned_sentence.count(words_list[i])
+		output_dict += {word_list[i]: word_count[i]}
+	
+	
+	return output_dict
+	
+print(word_count("Hello Hello world!")
+			
+	
+	
+	
+				
+		

@@ -1,0 +1,12 @@
+allergies_list = [
+		'eggs',
+		'peanuts',
+		'shellfish',
+		'strawberries',
+		'tomatoes',
+		'chocolate',
+		'pollen',
+		'cats'
+		]
+		
+print(allergies_list.reverse())

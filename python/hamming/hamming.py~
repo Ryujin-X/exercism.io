@@ -1,0 +1,7 @@
+def distance(s1, s2):
+	count = 0
+	for index, value in enumerate(s1):
+		if value != s2[index]:
+			count += 1
+			
+	return count

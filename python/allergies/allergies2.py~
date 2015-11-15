@@ -1,0 +1,60 @@
+
+
+class Allergies:
+
+	def __init__(self, score=0):
+		
+		self.score = score
+		self.allergies_dict = {
+		1:'eggs',
+		2:'peanuts',
+		4:'shellfish',
+		8:'strawberries',
+		16:'tomatoes',
+		32:'chocolate',
+		64:'pollen',
+		128:'cats'
+		}
+	
+		self.value_list = sorted(self.allergies_dict.keys())
+		#self.key_val = list(self.allergies_dict.items())
+		self.lst = [] #list of allergens based on score
+		self.elements_of_score = []
+		self.target = 0
+		
+		if self.score <= sum(self.value_list) and self.score > 0:
+			if self.score in self.value_list:
+				self.lst.append(self.allergies_dict[self.value_list[self.value_list.index(self.score)])])
+				
+			else:
+				for i in range(len(self.value_list)-1, -1, -1):
+					if self.score > self.value_list[i] and not(self.elements_of_score):
+						self.elements_of_score.append(self.value_list[i]) #Give first element
+							
+					elif sum(self.elements_of_score) + self.value_list[i] == self.score: #We found all the elements
+						self.elements_of_score.append(self.value_list[i])
+						break
+					elif sum(self.elements_of_score) + self.value_list[i] < self.score:
+						self.elements_of_score.append(self.value_list[i])
+					
+				for i in range(len(self.elements_of_score)): # Assign 
+					self.lst.append(self.allergies_dict[self.elements_of_score[i]])
+							#self.lst.append(self.key_val[j][0])
+					#for i in range(self.target, -1, -1):
+						#if sum(self.elements_of_score) + self.value_list[i] == self.score:
+							#self.elements_of_score.append(self.value_list[i])
+							#break
+						#elif sum(self.elements_of_score) + self.value_list[i] < self.score:
+							#self.elements_of_score.append(self.value_list[i])
+							
+					#for i in range(len(self.elements_of_score)):
+						#for j in range(0, len(self.key_val)):
+							#if self.elements_of_score[i] == self.key_val[j][1]:
+								#self.lst.append(self.key_val[j][0])
+						
+
+	def is_allergic_to(self, allergen):
+			if allergen in self.lst:
+				return True
+			else:
+				return False

@@ -1,0 +1,18 @@
+# Take a sequence of digits from a string and list every possible sequence of 'n' length
+
+def slices(string, sequence):
+
+    digit_list = [int(digit) for digit in string]
+    output_list = []
+
+    if sequence > len(string) or sequence <= 0:
+        raise ValueError("Error: The sequence is larger than the string or less than 1!")
+  		
+    start = 0
+    
+    while sequence <= len(digit_list):
+        output_list.append(digit_list[start:sequence])
+        start += 1
+        sequence += 1
+                
+    return output_list
